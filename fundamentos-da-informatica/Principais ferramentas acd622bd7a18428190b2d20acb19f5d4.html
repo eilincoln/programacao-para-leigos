@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Principais ferramentas</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="acd622bd-7a18-4281-90b2-d20acb19f5d4" class="page sans"><header><h1 class="page-title">Principais ferramentas</h1><p class="page-description"></p></header><div class="page-body"><h2 id="a2bedb2b-75b2-4e45-a416-164770cdd877" class="">Gerenciador de Arquivos</h2><p id="6d459a0c-823e-408e-b681-cc9f3327269c" class="">Um gerenciador de arquivos, também conhecido como explorador de arquivos ou gestor de ficheiros, é uma aplicação de software que permite aos utilizadores interagir com os arquivos e pastas armazenados no sistema de um computador. Essas ferramentas desempenham um papel essencial na organização e manipulação de dados digitais, facilitando o acesso, a transferência, a cópia, a exclusão e a organização de arquivos e pastas. Vamos explorar algumas das funcionalidades e características comuns dos gerenciadores de arquivos:</p><figure id="64f94cb3-7536-4f34-abdb-c5bbd380703a" class="image"><a href="Principais%20ferramentas%20acd622bd7a18428190b2d20acb19f5d4/Untitled.png"><img style="width:1816px" src="Principais%20ferramentas%20acd622bd7a18428190b2d20acb19f5d4/Untitled.png"/></a></figure><ol type="1" id="f6b587d6-51f8-4a84-ae68-54cb35cc3091" class="numbered-list" start="1"><li><strong>Navegação de Sistema de Arquivos:</strong> Um dos recursos mais básicos de um gerenciador de arquivos é a capacidade de navegar pelo sistema de arquivos do computador. Os utilizadores podem visualizar a estrutura de diretórios e pastas e acessar os arquivos neles contidos.</li></ol><ol type="1" id="512f9ff3-451b-437f-a2cc-d3c017b7f59d" class="numbered-list" start="2"><li><strong>Criação e Renomeação:</strong> Os gerenciadores de arquivos permitem criar novas pastas e renomear arquivos e pastas existentes. Isso é útil para manter os dados organizados e com nomes descritivos.</li></ol><ol type="1" id="618fb725-0249-422b-88d6-d50cdcaeec8c" class="numbered-list" start="3"><li><strong>Cópia e Movimentação de Arquivos:</strong> Você pode copiar arquivos de uma pasta para outra ou movê-los de um local para outro no sistema de arquivos. Isso facilita a reorganização e a distribuição de dados.<ol type="a" id="d553bb16-f7dd-4fab-ae46-23ccc17df488" class="numbered-list" start="1"><li>Podemos copiar e recortar arquivos com atalhos do próprio sistemas </li></ol></li></ol><ol type="1" id="e42ad427-6b20-46b3-b6ba-0a3bfe81f84d" class="numbered-list" start="4"><li><strong>Exclusão de Arquivos:</strong> Os gerenciadores de arquivos permitem excluir arquivos e pastas, movendo-os para a lixeira ou excluindo-os permanentemente. Isso é essencial para a gestão de espaço em disco.</li></ol><ol type="1" id="bafce6f0-29ff-42b9-8a53-0897da04073e" class="numbered-list" start="5"><li><strong>Pesquisa de Arquivos:</strong> Muitos gerenciadores de arquivos oferecem funcionalidades de pesquisa avançada, permitindo que os utilizadores encontrem rapidamente arquivos com base em critérios como nome, data de modificação ou tipo de arquivo.</li></ol><ol type="1" id="cb2c1777-38fe-4827-aa01-75b428305f44" class="numbered-list" start="6"><li><strong>Visualização de Arquivos:</strong> Alguns gerenciadores de arquivos podem pré-visualizar arquivos, como imagens, documentos e vídeos, sem a necessidade de abrir um programa separado. Isso é conveniente para revisar o conteúdo sem sair do gerenciador de arquivos.</li></ol><ol type="1" id="f427ef58-907a-4c63-b51a-5b16b2e6577a" class="numbered-list" start="7"><li><strong>Classificação e Ordenação:</strong> Os gerenciadores de arquivos geralmente permitem classificar arquivos e pastas por nome, tamanho, data de modificação e outros critérios. Isso facilita a organização e a localização de arquivos.</li></ol><ol type="1" id="4c56a82a-b048-45f0-81b9-88772c1aa3b0" class="numbered-list" start="8"><li><strong>Gerenciamento de Unidades e Dispositivos:</strong> Além do sistema de arquivos local, os gerenciadores de arquivos também podem exibir unidades de armazenamento externas, como discos rígidos externos, pen drives e unidades de rede. Isso permite a transferência de arquivos entre dispositivos.</li></ol><ol type="1" id="e09ea1f5-41ac-4a01-8fd0-6d08bbbeb277" class="numbered-list" start="9"><li><strong>Personalização da Interface:</strong> A maioria dos gerenciadores de arquivos permite personalizar a interface do usuário para atender às preferências individuais, como escolher entre modos de exibição de ícones, lista ou detalhes.</li></ol><ol type="1" id="ea94c9b3-b82e-42ec-9f99-2936f43f4d3f" class="numbered-list" start="10"><li><strong>Ações em Massa:</strong> Muitos gerenciadores de arquivos suportam a realização de ações em massa, como a renomeação, a exclusão ou a compressão de vários arquivos de uma só vez.</li></ol><ol type="1" id="4d7ca79a-0edc-4a4f-856e-1f7197df61c9" class="numbered-list" start="11"><li><strong>Integração com Serviços em Nuvem:</strong> Alguns gerenciadores de arquivos oferecem integração com serviços de armazenamento em nuvem, permitindo que os utilizadores acessem e gerenciem seus arquivos na nuvem diretamente do gerenciador de arquivos.</li></ol><p id="e97aec6e-8e9b-45a7-8814-5bbb154b1efb" class="">Os gerenciadores de arquivos desempenham um papel fundamental na experiência de utilização de um computador, facilitando a organização e a manipulação eficaz de arquivos e pastas. Existem muitos gerenciadores de arquivos disponíveis para diferentes sistemas operacionais, como o Windows Explorer, o Finder no macOS, o Nautilus no Linux e uma variedade de aplicativos de terceiros que oferecem recursos adicionais e personalizações.</p><h2 id="3bbcff1a-72ff-4c85-8855-71325207a01f" class="">Compactar / Comprimir</h2><figure id="b655336c-8651-4fb2-ae5c-ade664ce7560" class="image"><a href="Principais%20ferramentas%20acd622bd7a18428190b2d20acb19f5d4/Untitled%201.png"><img style="width:1401px" src="Principais%20ferramentas%20acd622bd7a18428190b2d20acb19f5d4/Untitled%201.png"/></a></figure><p id="14b267c5-cb1e-4903-91f9-66607ee8e148" class="">Deixar o arquivo mais compactado e mais leve para poder compartilhar.</p><p id="788942a6-868d-4a63-aa55-224e20a93660" class="">
+</p><h2 id="61cca983-3977-4c8a-b5b1-07836f3f5611" class="">Navegadores WEB</h2><p id="1a592c75-c393-4a59-bb04-0fa37c14a021" class="">Os navegadores da web são programas de software projetados para permitir que os usuários acessem e interajam com informações na World Wide Web, a parte pública da Internet. Eles desempenham um papel fundamental na navegação na web e tornam a experiência de visualização de sites, busca de informações e interação online mais fácil e acessível. Aqui está um resumo de como os navegadores web funcionam:</p><ol type="1" id="9b90a6cf-dcdf-4b82-91f8-871785e22f55" class="numbered-list" start="1"><li>Interface do usuário: O navegador fornece uma interface de usuário gráfica (GUI) que permite aos usuários interagir com a web. Isso inclui elementos como barras de endereço, botões de navegação, guias, favoritos e muito mais.</li></ol><ol type="1" id="02a63182-577c-453e-8d7b-bf25b1494c56" class="numbered-list" start="2"><li>Solicitação e resposta: Quando um usuário digita um URL (Uniform Resource Locator) ou clica em um link, o navegador envia uma solicitação para o servidor web que hospeda o site desejado. Essa solicitação é enviada por meio do protocolo HTTP (Hypertext Transfer Protocol) ou HTTPS (HTTP Secure) para sites seguros.</li></ol><ol type="1" id="1ad78abc-7df8-4f55-810e-62b72177418f" class="numbered-list" start="3"><li>Resolução de DNS: Antes de enviar a solicitação, o navegador precisa determinar o endereço IP do servidor de destino a partir do URL. Isso é feito por meio do sistema de nomes de domínio (DNS), que traduz o nome de domínio em um endereço IP.</li></ol><ol type="1" id="93aa353b-395a-4e03-bd82-8519bbddba95" class="numbered-list" start="4"><li>Recebimento de dados: Após a solicitação ser enviada, o servidor web responde enviando os dados do site de volta para o navegador. Esses dados podem incluir HTML (Hypertext Markup Language), CSS (Cascading Style Sheets), JavaScript e outros recursos, como imagens, vídeos e arquivos.</li></ol><ol type="1" id="7355a2ad-c856-480f-90cc-95186625e06e" class="numbered-list" start="5"><li>Análise e renderização: O navegador recebe os dados brutos e os analisa para entender a estrutura da página da web. Ele interpreta o HTML para criar a representação visual da página e aplica o CSS para estilizá-la. O JavaScript é executado para adicionar funcionalidade interativa à página.</li></ol><ol type="1" id="6ba03dee-ac60-4545-bb3f-ab07e7ecf04a" class="numbered-list" start="6"><li>Apresentação ao usuário: O navegador exibe a página da web processada em sua janela, permitindo que o usuário a visualize e interaja com os elementos, como links, formulários, botões e mídia.</li></ol><ol type="1" id="6b90315a-9c5e-412c-9120-2bed145ccfdc" class="numbered-list" start="7"><li>Cookies e armazenamento local: O navegador também gerencia cookies, que são pequenos arquivos de texto usados para armazenar informações temporárias, como preferências do usuário e dados de sessão. Além disso, os navegadores suportam recursos de armazenamento local, como o LocalStorage, que permite que os sites armazenem dados no dispositivo do usuário.</li></ol><ol type="1" id="e9aa8a8b-63cd-40aa-8792-e1621bfd778a" class="numbered-list" start="8"><li>Segurança: Navegadores desempenham um papel crucial na segurança online. Eles implementam recursos de segurança, como a detecção de sites maliciosos, criptografia de dados (por meio do HTTPS) e restrições de segurança, como a política de mesma origem (Same Origin Policy) para proteger os usuários de ameaças de segurança.</li></ol><ol type="1" id="04b95fa4-3f1d-4e59-8653-1610f2bf63ef" class="numbered-list" start="9"><li>Atualizações e extensões: A maioria dos navegadores permite que os usuários instalem extensões e complementos que adicionam funcionalidades extras, como bloqueadores de anúncios, gerenciadores de senhas e ferramentas de desenvolvedor. Os navegadores também recebem atualizações regulares para melhorar o desempenho, a segurança e a compatibilidade com os padrões web.</li></ol><p id="2fa2bfaa-b3d1-4169-a091-1d5cfaba3bd1" class="">Em resumo, os navegadores web funcionam como intermediários entre os usuários e os servidores da web, permitindo o acesso e a interação com conteúdo online. Eles desempenham um papel crucial na experiência de navegação na web e continuam evoluindo para oferecer recursos avançados e segurança aprimorada.</p><p id="807d851d-2b34-4713-8f57-2717d853dbd0" class="">
+</p><h2 id="f629cd32-9099-4caf-b1ce-b9adc61cf66d" class="">Path do Sistema</h2><p id="25a729eb-1570-4e0d-b978-a195ea9b6ec5" class="">Em sistemas Windows, um &quot;Path do sistema&quot; se refere ao &quot;PATH&quot; ou &quot;Variável de Ambiente PATH&quot;. </p><p id="fef5c8e5-7172-43a3-aee8-6a731d38f36a" class="">Esta variável de ambiente é fundamental para o funcionamento do sistema operacional, pois controla quais diretórios o sistema operacional deve procurar quando você executa um programa ou comando a partir do prompt de comando ou de outros locais.</p><p id="2afa58fd-5cfc-471a-b9c3-44cb3eba6dde" class="">
+</p><p id="ff296880-cfe5-4dd6-989a-4f4e862c3f15" class="">A variável de ambiente PATH contém uma lista de diretórios separados por ponto e vírgula (;). Quando você digita um comando no prompt de comando ou em uma janela de terminal, o sistema operacional verifica cada diretório listado na variável PATH em ordem e procura o executável correspondente ao comando que você digitou. Se o sistema encontrar o executável no diretório especificado na variável PATH, o comando será executado com sucesso. </p><p id="dbe623a9-1bd7-4e3d-8070-77491fd660df" class="">
+</p><p id="9aa784d5-47c6-498a-b28c-60b08ff78da2" class="">Se o sistema não encontrar o executável no diretório atual ou em nenhum dos diretórios listados na variável PATH, você receberá um erro informando que o comando não pôde ser encontrado.</p><p id="83b9cfd9-19e1-4f09-bc58-da762b58ec2f" class="">
+</p><p id="16b497b7-0d59-489d-9d73-d6009dda9cc2" class="">Por exemplo, se você tem o diretório &quot;C:\Windows\System32&quot; listado na variável PATH, e você digitar &quot;notepad&quot; no prompt de comando, o sistema operacional procurará pelo executável do Bloco de Notas (notepad.exe) em &quot;C:\Windows\System32&quot; e, se encontrado, abrirá o Bloco de Notas. Se o executável não estiver lá, o sistema continuará procurando nos outros diretórios listados na variável PATH até encontrá-lo ou até chegar ao final da lista.</p><p id="1f0c168a-e2f2-4f89-b645-128f394f00fe" class="">
+</p><p id="d7debba5-0e91-480f-b374-63ec867c76e9" class="">Você pode personalizar o PATH do sistema no Windows, adicionando ou removendo diretórios conforme necessário. Isso é útil quando você deseja adicionar novos comandos ou programas ao sistema e deseja que eles sejam acessíveis de qualquer lugar no prompt de comando.</p><p id="0f664242-92d0-4fa2-9887-e5d1af5efa58" class="">
+</p><p id="97dc4453-2794-4160-8ee9-83c0556819d8" class="">Para modificar o PATH do sistema no Windows, siga estas etapas:</p><ol type="1" id="f359f930-b7c2-4796-a522-e6d9d3bed983" class="numbered-list" start="1"><li>Clique com o botão direito do mouse no ícone &quot;Meu Computador&quot; (ou &quot;Este Computador&quot; em versões mais recentes do Windows) e escolha &quot;Propriedades&quot;.</li></ol><ol type="1" id="8cdd79d2-1847-462d-a992-89fc50dd49f3" class="numbered-list" start="2"><li>Na janela de Propriedades do Sistema, clique em &quot;Configurações avançadas do sistema&quot; ou &quot;Configurações avançadas do sistema&quot; (dependendo da versão do Windows).</li></ol><ol type="1" id="c77080e7-7e7f-4e41-bc39-ba2db0c08b82" class="numbered-list" start="3"><li>Na guia &quot;Avançado&quot;, clique no botão &quot;Variáveis de Ambiente&quot;.</li></ol><ol type="1" id="b65ac4ac-1342-4947-a03c-072d1de15df4" class="numbered-list" start="4"><li>Na seção &quot;Variáveis do Sistema&quot;, encontre a variável &quot;PATH&quot; e clique em &quot;Editar&quot;.</li></ol><ol type="1" id="57a49d7f-a464-4228-a3c1-7a62e5f41a07" class="numbered-list" start="5"><li>Na caixa de edição de Valor da Variável, você pode adicionar ou remover diretórios separados por ponto e vírgula (;) de acordo com suas necessidades. Certifique-se de não excluir ou modificar diretórios importantes que já estão lá, pois isso pode causar problemas no sistema.</li></ol><ol type="1" id="1fae63a3-caa9-46b8-a7ca-f5d904c7f9e5" class="numbered-list" start="6"><li>Clique em &quot;OK&quot; para confirmar as alterações e feche as janelas.</li></ol><p id="b6adad82-9f6f-4fc9-8539-e3b14a0f5efc" class="">
+</p><p id="402f9a44-8b9c-45a0-858e-5af0577c6cb3" class="">Depois de modificar o PATH do sistema, as alterações entrarão em vigor imediatamente e permitirão que o sistema operacional localize os executáveis dos comandos ou programas nos diretórios especificados. Certifique-se de ter cuidado ao modificar a variável PATH para evitar problemas de sistema.</p><h2 id="e533ddc2-df3f-4a91-ade9-b5547a17de30" class="">Terminal / Prompt de Comando </h2><p id="9d49dbb6-f0fb-4399-8da4-7a3de9fe7de4" class="">O Terminal (em sistemas Unix e Linux) ou o Prompt de Comandos (em sistemas Windows) são interfaces de linha de comando que permitem que os usuários interajam com um sistema operacional por meio de comandos de texto. Eles são uma maneira poderosa de executar tarefas, gerenciar arquivos, configurar o sistema e realizar uma variedade de operações, tudo sem a necessidade de uma interface gráfica.</p><p id="554e78c5-27d0-4fac-a647-4421f0fed04c" class="">Aqui está uma visão geral de como o Terminal ou o Prompt de Comandos funcionam:</p><ol type="1" id="2e7dfb2e-8c4b-474f-9c53-0ce186b08bca" class="numbered-list" start="1"><li>Interface de linha de comando: Quando você abre o Terminal ou o Prompt de Comandos, você é apresentado com uma janela de texto onde pode inserir comandos.</li></ol><ol type="1" id="e300346e-bf69-44a1-b6b8-04dafb30cc03" class="numbered-list" start="2"><li>Prompt: O prompt é uma mensagem de texto que geralmente indica o diretório atual ou outro contexto. Isso ajuda você a entender onde está e a qual sistema de arquivos suas operações se aplicarão. Por exemplo, em sistemas Unix e Linux, o prompt pode ser algo como &quot;$&quot;, enquanto no Prompt de Comandos do Windows, é geralmente o caminho para o diretório atual.</li></ol><ol type="1" id="e8555427-0ae7-4bc4-baea-fa2c7c7f79df" class="numbered-list" start="3"><li>Comandos: Você insere comandos na linha de comando, seguidos da tecla &quot;Enter&quot; para executá-los. Os comandos são instruções de texto que o sistema operacional entende e executa. Existem comandos para realizar uma ampla variedade de tarefas, como navegar pelos diretórios, criar, copiar, mover e excluir arquivos, gerenciar processos, configurar o sistema, etc.</li></ol><ol type="1" id="86e0f9a8-0e1d-4e42-8aa9-5c3266543cee" class="numbered-list" start="4"><li>Argumentos: Muitos comandos aceitam argumentos para especificar detalhes sobre como a tarefa deve ser realizada. Por exemplo, ao copiar um arquivo, você especifica o nome do arquivo de origem e o nome do arquivo de destino como argumentos.</li></ol><ol type="1" id="d4ddbee3-6271-4125-81ec-d77c63a98a51" class="numbered-list" start="5"><li>Saída: Após a execução de um comando, você normalmente recebe uma saída na janela do Terminal ou do Prompt de Comandos. Isso pode incluir informações sobre o resultado da operação, mensagens de erro ou outras informações relevantes.</li></ol><ol type="1" id="8bc2179f-8375-4a26-8a04-0a95122858ff" class="numbered-list" start="6"><li>Redirecionamento e tubulação: Você pode redirecionar a saída de um comando para um arquivo ou direcioná-la para outro comando usando operadores como &quot;&gt;&quot;, &quot;&gt;&gt;&quot; ou &quot;|&quot;. Isso permite que você processe e armazene dados de maneira eficiente.</li></ol><ol type="1" id="335d9a06-7b6e-446e-9784-98b38fa87924" class="numbered-list" start="7"><li>Navegação no sistema de arquivos: Você pode usar comandos para navegar pelos diretórios do sistema de arquivos, listar conteúdos, criar diretórios, mover-se entre pastas e muito mais.</li></ol><ol type="1" id="68abff7b-7fe9-45d1-9b51-205a702fae74" class="numbered-list" start="8"><li>Automatização: Os Terminais e os Prompts de Comandos são amplamente utilizados para automatizar tarefas, criando scripts que consistem em uma série de comandos. Isso é especialmente útil para tarefas repetitivas ou complexas.</li></ol><ol type="1" id="db6be0fb-8623-4da2-afce-37bedb83a87f" class="numbered-list" start="9"><li>Personalização: Muitas vezes, você pode personalizar a aparência e o comportamento do seu Terminal ou Prompt de Comandos de acordo com suas preferências e necessidades.</li></ol><p id="059b0c2d-55fe-4657-b5fe-4e9088ae8937" class="">Em resumo, o Terminal ou o Prompt de Comandos são ferramentas poderosas para interagir com um sistema operacional por meio de comandos de texto. Eles são amplamente utilizados por administradores de sistemas, desenvolvedores e usuários avançados para realizar tarefas de gerenciamento de sistemas e automação.</p><p id="1d473edb-df6b-48e9-9a75-809df90cdaba" class="">
+</p><p id="af3ed069-a5cf-4c3f-8c07-3b446d1539e4" class="">
+</p><p id="9b42b5ff-0ba1-4a81-b521-5790e73113fa" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
