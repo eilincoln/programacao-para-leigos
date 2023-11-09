@@ -1,0 +1,681 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Como funciona um computador</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="16648e43-0559-485f-a5f4-af9ef08e2b91" class="page sans"><header><h1 class="page-title">Como funciona um computador</h1><p class="page-description"></p></header><div class="page-body"><p id="842d688e-4b79-4509-a8f7-8af4c6f8ebf6" class="">Um computador é uma máquina complexa que executa uma variedade de tarefas, desde calcular equações matemáticas até reproduzir vídeos e processar textos. Para entender como um computador funciona, podemos dividir o processo em algumas etapas principais:</p><ol type="1" id="7b6a6775-d1c3-4cf6-a4cf-e41d72ee3d6d" class="numbered-list" start="1"><li>Hardware:<ul id="1ead317f-e2ca-47a6-a592-a9aa0bde6b05" class="bulleted-list"><li style="list-style-type:disc">Processador (CPU): O processador é o cérebro do computador e executa as instruções do software. Ele realiza operações aritméticas e lógicas, gerenciando a maioria das tarefas de processamento.</li></ul><ul id="18e4195d-6e2f-4d6b-abb5-5afc04edfffb" class="bulleted-list"><li style="list-style-type:disc">Memória RAM: A memória de acesso aleatório (RAM) é usada para armazenar temporariamente os dados e programas que estão sendo usados ativamente. Ela permite acesso rápido e aleatório a informações.</li></ul><ul id="a4a76310-a9f6-4003-aa74-f1a34e06df4b" class="bulleted-list"><li style="list-style-type:disc">Armazenamento: Os computadores possuem dispositivos de armazenamento, como discos rígidos (HDDs) ou unidades de estado sólido (SSDs), para armazenar dados a longo prazo, como arquivos, programas e sistemas operacionais.</li></ul><ul id="c7befb17-76ab-439a-9031-9f23bd7f408b" class="bulleted-list"><li style="list-style-type:disc">Placa-mãe: A placa-mãe é a &quot;espinha dorsal&quot; do computador, conectando todos os componentes. Ela também inclui controladores para dispositivos como teclado, mouse, monitor e outros periféricos.</li></ul><ul id="1cfa83dc-d30f-46a9-8063-6946145b8218" class="bulleted-list"><li style="list-style-type:disc">Periféricos: Teclado, mouse, monitor, impressora e outros dispositivos externos que permitem a interação com o computador.</li></ul></li></ol><ol type="1" id="0553b681-31e5-4368-a34e-7fca36ce5daa" class="numbered-list" start="2"><li>Software:<ul id="13726e3d-122c-478f-9fb0-f866d95d21a8" class="bulleted-list"><li style="list-style-type:disc">Sistema Operacional: O sistema operacional (por exemplo, Windows, macOS, Linux) controla e coordena o hardware e fornece uma interface para o usuário interagir com o computador. Ele gerencia tarefas como gerenciamento de arquivos, controle de hardware e multitarefa.</li></ul><ul id="d4545c69-1bf6-435e-a0be-1a437abeb9f0" class="bulleted-list"><li style="list-style-type:disc">Aplicativos: Os programas de software, como navegadores da web, processadores de texto e jogos, são executados no computador para realizar tarefas específicas.</li></ul></li></ol><ol type="1" id="f725a13f-f2fd-4f00-b25c-35445557f083" class="numbered-list" start="3"><li>Funcionamento:
+Quando você liga o computador, o sistema operacional é carregado na memória RAM a partir do armazenamento. O usuário interage com o computador usando periféricos, como teclado e mouse. O processador executa instruções do sistema operacional e dos aplicativos, processando dados, exibindo informações na tela e respondendo a comandos do usuário.</li></ol><ol type="1" id="610e67d6-9f31-4c41-ae9c-dd93497b2394" class="numbered-list" start="4"><li>Comunicação:
+Os dispositivos de entrada (como teclado e mouse) e saída (como o monitor) permitem que o usuário comunique suas instruções e receba feedback do computador. A comunicação interna entre os componentes de hardware é gerenciada pela placa-mãe e pelo sistema operacional.</li></ol><ol type="1" id="bce5a956-06a7-437a-beed-0b3dfc3ea723" class="numbered-list" start="5"><li>Armazenamento e Recuperação de Dados:
+Os dados são armazenados em dispositivos de armazenamento permanentes, como discos rígidos ou SSDs. O sistema operacional gerencia o acesso a esses dados, permitindo que os aplicativos os leiam e gravem conforme necessário.</li></ol><p id="5192adf8-f428-4746-97b0-05bfd549db0d" class="">Em resumo, um computador é uma máquina complexa que utiliza hardware (componentes físicos) e software (programas) para executar tarefas variadas. A interação entre esses componentes permite que os computadores processem informações, armazenem dados e executem programas, tornando-os uma parte essencial de nossa vida cotidiana.</p><h2 id="586a2059-095c-47e7-9531-538ffacd109f" class="">Quando falamos em computador?</h2><p id="7e5536b8-00b4-411c-9f2f-44055f4779a7" class="">Isso significa que estamos falando sobre <strong>ENTRADA</strong>, <strong>PROCESSAMENTO </strong>e <strong>SAÍDA </strong>de dados.</p><h2 id="292b6bbb-3547-4423-a815-1ad3f10495f6" class="">Processador</h2><p id="3b490442-6069-4e1b-9017-529fc5aadd24" class="">É basicamente o coração do computador, sem ele, não conseguimos usar o computador. </p><p id="e230699e-1489-415a-8462-9fa1dc0f2ea7" class="">Existem diversas empresas que fazer o processador. </p><h2 id="2ad73f51-78a4-461e-98ff-1def94527adb" class="">Memórias</h2><p id="09b28436-9ee4-4424-9751-c29076213940" class="">São o que guarda os dados. E existem dois tipos:</p><ul id="92117909-ce8d-46b6-930b-26ce76eabafc" class="bulleted-list"><li style="list-style-type:disc">Voláteis<ul id="f6b56b58-7c60-4a95-9ed0-b9c3836c1558" class="bulleted-list"><li style="list-style-type:circle">Memória RAM</li></ul></li></ul><ul id="acb12ee0-df49-4f23-a834-41e2b44e0b2d" class="bulleted-list"><li style="list-style-type:disc">Não Voláteis<ul id="f2c5006d-eb72-4269-a321-d327f91a6acb" class="bulleted-list"><li style="list-style-type:circle">HD ou SSD</li></ul></li></ul><h2 id="f190fc31-e577-4338-9201-20f8ee9e1723" class="">Dispositivo de comunicação</h2><p id="5ee226a8-2771-4bbb-966c-c7934dcd8d7b" class="">É o que faz a comunicação externa do computador com qualquer outro serviço.</p><p id="d76e9b7a-749a-4d52-9fc9-ca63ec11bbb8" class="">
+</p><h2 id="2663093f-06c4-4d13-a88f-155dd298040f" class="">Para que tudo isso funcione: Boot</h2><p id="6b4748c4-2894-42ff-b73f-47abd7ae1143" class="">O termo &quot;boot&quot; refere-se ao processo de inicialização de um computador. Quando você liga o computador ou o reinicia, o sistema operacional e outros programas essenciais são carregados na memória para que o computador esteja pronto para uso. O processo de boot é composto por várias etapas, e aqui estão os conceitos básicos de como ele funciona:</p><ol type="1" id="32fba983-05f8-41d6-a8ce-b4a772808bc8" class="numbered-list" start="1"><li>BIOS/UEFI (Firmware): Quando você liga o computador, o primeiro software a ser executado é o BIOS (ou UEFI, uma versão mais recente). O BIOS é um programa de firmware que está armazenado em um chip na placa-mãe do computador. Ele executa uma série de verificações de hardware para garantir que todos os componentes do computador estejam funcionando corretamente. Ele também procura o dispositivo de armazenamento (por exemplo, disco rígido, SSD, unidade flash USB) de onde o sistema operacional será carregado.</li></ol><ol type="1" id="f3f41cbe-cf02-4368-9879-f9b27fdb4c14" class="numbered-list" start="2"><li>MBR/GPT: Após verificar o hardware, o BIOS/UEFI procura o MBR (Master Boot Record) ou a tabela de partição GPT (GUID Partition Table) no dispositivo de armazenamento. O MBR ou GPT contém informações sobre como o disco está organizado e onde o sistema operacional está localizado.</li></ol><ol type="1" id="cc35d39c-3e1f-4085-8a71-5434847c4bbb" class="numbered-list" start="3"><li>Carregamento do Carregador de Inicialização: Com base nas informações do MBR/GPT, o BIOS/UEFI carrega um carregador de inicialização (bootloader) na memória RAM. O bootloader é um pequeno programa que é responsável por iniciar o sistema operacional. O carregador de inicialização pode ser o GRUB (usado em sistemas Linux), o NTLDR (usado em sistemas Windows mais antigos) ou o Windows Boot Manager (usado em sistemas Windows mais recentes), entre outros.</li></ol><ol type="1" id="81591877-90bb-4436-b295-a441dd545f57" class="numbered-list" start="4"><li>Inicialização do Sistema Operacional: Uma vez carregado na memória, o carregador de inicialização apresenta opções ao usuário (por exemplo, escolher entre sistemas operacionais se houver mais de um instalado). Em seguida, ele carrega o núcleo (kernel) do sistema operacional escolhido na memória e inicia o sistema operacional. O núcleo é a parte central do sistema operacional responsável por gerenciar recursos de hardware e executar programas.</li></ol><ol type="1" id="69b5f06a-c7e3-4ea4-8929-01d072563dfe" class="numbered-list" start="5"><li>Inicialização do Sistema: Após o carregamento do núcleo do sistema operacional, o sistema operacional realiza uma série de inicializações e carrega os drivers necessários para hardware específico. Em seguida, a interface gráfica ou a linha de comando é exibida, permitindo ao usuário interagir com o computador.</li></ol><p id="6e1df597-35a9-4e94-adaa-a2f06199b8b7" class="">É importante notar que o processo de boot pode variar ligeiramente dependendo do sistema operacional e do hardware específicos. Além disso, com o advento de unidades de estado sólido (SSDs) e UEFI em vez de BIOS, alguns aspectos do processo de boot foram aprimorados em relação aos discos rígidos tradicionais e ao BIOS.</p><p id="8506702c-438c-48c6-a77e-7ba9fd949d96" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
